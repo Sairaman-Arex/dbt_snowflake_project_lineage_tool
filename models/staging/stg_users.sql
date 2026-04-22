@@ -5,4 +5,4 @@ select
     user_name,
     lower(email) as email,
     created_date
-from {{ source('raw', 'raw_users') }}
+from {{ source('raw_testing', 'raw_users') }}
