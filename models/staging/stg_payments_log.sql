@@ -5,4 +5,4 @@ select
     transaction_id,
     payment_type,
     payment_status
-from {{ source('raw', 'raw_payments_log') }}
+from {{ source('raw_testing', 'raw_payments_log') }}
