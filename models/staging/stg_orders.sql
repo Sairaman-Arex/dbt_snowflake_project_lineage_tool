@@ -1,9 +1,9 @@
 {{ config(materialized='view') }}
 
-SELECT
+select
     order_id,
     customer_name,
     product,
     amount,
     order_date
-FROM LINEAGE.PUBLIC.raw_orders
+from {{ source('raw_public', 'raw_orders') }}
