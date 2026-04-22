@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: LINEAGE        # 👈 your DB (from screenshot)
+    schema: TESTING           # 👈 your schema
+
+    tables:
+      - name: raw_users
+      - name: raw_transactions
+      - name: raw_payments_log
