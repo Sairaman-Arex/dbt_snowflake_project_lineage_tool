@@ -1,9 +1,19 @@
 version: 2
 
 sources:
-  - name: raw
-    database: LINEAGE        # 👈 your DB (from screenshot)
-    schema: TESTING           # 👈 your schema
+  # 🔷 PUBLIC schema tables
+  - name: raw_public
+    database: LINEAGE
+    schema: PUBLIC
+
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+
+  # 🔷 TESTING schema tables
+  - name: raw_testing
+    database: LINEAGE
+    schema: TESTING
 
     tables:
       - name: raw_users
