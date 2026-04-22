@@ -1,18 +1,17 @@
 {{ config(materialized='table') }}
 
-SELECT
+select
     order_id,
     customer_name,
     product,
     amount,
 
-    CASE 
-        WHEN amount >= 50000 THEN 'Premium'
-        WHEN amount >= 10000 THEN 'High'
-        WHEN amount >= 3000 THEN 'Medium'
-        ELSE 'Low'
-    END AS category,
+    case 
+        when amount >= 50000 then 'Premium'
+        when amount >= 10000 then 'High'
+        when amount >= 3000 then 'Medium'
+        else 'Low'
+    end as category,
 
     order_date
-FROM LINEAGE.PUBLIC.raw_orders
-
+from {{ ref('stg_orders') }}

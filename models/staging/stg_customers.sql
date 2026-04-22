@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
-SELECT
+select
     customer_id,
     customer_name,
     city
-FROM LINEAGE.PUBLIC.raw_customers
+from {{ source('raw_public', 'raw_customers') }}

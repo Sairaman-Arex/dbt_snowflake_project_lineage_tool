@@ -5,4 +5,4 @@ select
     user_id,
     amount,
     transaction_date
-from {{ source('raw', 'raw_transactions') }}
+from {{ source('raw_testing', 'raw_transactions') }}
